@@ -29,8 +29,8 @@ artifactory:
           - 'sh'
           - '-c'
           - >
-            curl https://raw.githubusercontent.com/jfrog/log-analytics-elastic/{{ .Values.global.jfrog.observability.branch }}/fluent.conf.rt -o fluentd.conf;
-            fluentd -v -c fluentd.conf
+            curl https://raw.githubusercontent.com/jfrog/log-analytics-elastic/{{ .Values.global.jfrog.observability.branch }}/fluent.conf.rt -o /tmp/fluentd.conf;
+            fluentd -v -c /tmp/fluentd.conf
         volumeMounts:
           - mountPath: "{{ .Values.artifactory.persistence.mountPath }}"
             name: artifactory-volume
@@ -69,8 +69,8 @@ xray:
           - 'sh'
           - '-c'
           - >
-            curl https://raw.githubusercontent.com/jfrog/log-analytics-elastic/{{ .Values.global.jfrog.observability.branch }}/fluent.conf.xray -o fluentd.conf;
-            fluentd -v -c fluentd.conf
+            curl https://raw.githubusercontent.com/jfrog/log-analytics-elastic/{{ .Values.global.jfrog.observability.branch }}/fluent.conf.xray -o /tmp/fluentd.conf;
+            fluentd -v -c /tmp/fluentd.conf
         volumeMounts:
           - mountPath: "{{ .Values.xray.persistence.mountPath }}"
             name: data-volume
