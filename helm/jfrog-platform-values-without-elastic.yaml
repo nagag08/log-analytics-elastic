@@ -1,4 +1,7 @@
 installerInfo: '{ "productId": "Helm_elastic_artifactory/{{ .Chart.Version }}", "features": [ { "featureId": "ArtifactoryVersion/{{ default .Chart.AppVersion .Values.artifactory.image.version }}" }, { "featureId": "{{ if .Values.postgresql.enabled }}postgresql{{ else }}{{ .Values.database.type }}{{ end }}/0.0.0" }, { "featureId": "Platform/{{ default "kubernetes" .Values.installer.platform }}" },  { "featureId": "Channel/Helm_elastic_artifactory" } ] }'
+global:
+  masterKey: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  joinKey: EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 artifactory:
   artifactory:
     openMetrics:
