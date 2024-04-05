@@ -1,4 +1,6 @@
 global:
+  masterKey: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  joinKey: EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
   elastic:
     host: elasticsearch
     port: 9200
